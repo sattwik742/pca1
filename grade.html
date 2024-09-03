@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+</head>
+<body>
+    <h2>Student Grade Calculator</h2>
+
+    <label for="subject1">Subject 1 Marks:</label>
+    <input type="number" id="subject1" min="0" max="100"><br><br>
+
+    <label for="subject2">Subject 2 Marks:</label>
+    <input type="number" id="subject2" min="0" max="100"><br><br>
+
+    <label for="subject3">Subject 3 Marks:</label>
+    <input type="number" id="subject3" min="0" max="100"><br><br>
+
+    <button onclick="calculateGrade()">Calculate Grade</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function calculateGrade() {
+            // Get the input values
+            let subject1 = parseInt(document.getElementById("subject1").value);
+            let subject2 = parseInt(document.getElementById("subject2").value);
+            let subject3 = parseInt(document.getElementById("subject3").value);
+
+            // Calculate total marks
+            let totalMarks = subject1 + subject2 + subject3;
+
+            // Determine grade and remarks
+            let grade, remarks;
+            if (totalMarks >= 270) {
+                grade = 'O';
+                remarks = 'Outstanding';
+            } else if (totalMarks >= 240) {
+                grade = 'E';
+                remarks = 'Excellent';
+            } else if (totalMarks >= 210) {
+                grade = 'A';
+                remarks = 'Very good';
+            } else if (totalMarks >= 180) {
+                grade = 'B';
+                remarks = 'Good';
+            } else if (totalMarks >= 150) {
+                grade = 'C';
+                remarks = 'Average';
+            } else if (totalMarks >= 120) {
+                grade = 'F';
+                remarks = 'Fail';
+            } else {
+                grade = 'F';
+                remarks = 'Fail';
+            }
+
+            // Display the result
+            document.getElementById("result").innerHTML = `Total Marks: ${totalMarks} <br> Grade: ${grade} <br> Remarks: ${remarks}`;
+        }
+    </script>
+</body>
+</html>
