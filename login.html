@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Account</h2>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" placeholder="Enter your email" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" placeholder="Enter your password" required><br>
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="password" id="confirmPassword" placeholder="Re-enter your password" required><br>
+        <input type="button" value="Create Account" onclick="validateForm()">
+    </div>
+    <script>
+        function validateForm() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password.length < 8) {
+                alert("Weak Password. Enter Again");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Password is not matched");
+                return;
+            }
+            window.location.href = "/js/successlogin.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number Checker</title>
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            if (num <= 3) return true;
+            if (num % 2 === 0 || num % 3 === 0) return false;
+            for (let i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+            }
+            return true;
+        }
+
+        function checkPrime() {
+            const num = parseInt(document.getElementById("number").value);
+            const result = document.getElementById("result");
+            if (isNaN(num)) {
+                result.textContent = "Please enter a valid number.";
+            } else {
+                result.textContent = num + (isPrime(num) ? " is a Prime number." : " is not a Prime number.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Prime Number Checker</h1>
+    <label for="number">Enter a number: </label>
+    <input type="text" id="number">
+    <button onclick="checkPrime()">Check</button>
+    <p id="result"></p>
+</body>
+</html>

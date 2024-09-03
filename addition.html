@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Two Numbers</title>
+</head>
+<body>
+    <h1>Add Two Numbers</h1>
+    
+    <label for="number1">Enter the first number:</label>
+    <input type="number" id="number1">
+    
+    <br><br>
+    
+    <label for="number2">Enter the second number:</label>
+    <input type="number" id="number2">
+    
+    <br><br>
+    
+    <button onclick="addNumbers()">Add</button>
+    
+    <p id="result"></p>
+    
+    <script>
+        function addNumbers() {
+            // Get values from input fields
+            const num1 = document.getElementById('number1').value;
+            const num2 = document.getElementById('number2').value;
+            const resultElement = document.getElementById('result');
+
+            // Convert input values to numbers
+            const number1 = parseFloat(num1);
+            const number2 = parseFloat(num2);
+
+            // Check if inputs are valid numbers
+            if (isNaN(number1) || isNaN(number2)) {
+                resultElement.innerText = "Please enter valid numbers in both fields.";
+                return;
+            }
+
+            // Calculate the sum
+            const sum = number1 + number2;
+
+            // Display the result
+            resultElement.innerText = "The sum is: " + sum;
+        }
+    </script>
+</body>
+</html>
