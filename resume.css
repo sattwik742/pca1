@@ -1,0 +1,44 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body
+{
+  display: flex;
+}
+.left {
+  margin-left: 150px;
+  margin-top: 150px;
+  background-color: lightskyblue;
+}
+.left  h1
+{
+  margin-top: 30px;
+}
+.left h1,h2,p
+{
+  margin-left: 20px;
+  margin-right: 40px;
+}
+.left ul
+{
+  margin-left: 40px;
+}
+.left p,ul
+{
+  font-size: 22px;
+}
+.right
+{
+  background-color: lightgreen;
+  margin-left: 0px;
+  margin-top: 150px;
+  margin-right: 150px;
+}
+.right h1,h2,p
+{
+  margin-left: 20px;
+}
+
